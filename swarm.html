@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="swarm_stylesheet.css"/>
+		<title>SWARM - Galactic Cloud Simulations</title>
+		<meta name="DC.Author" content="Martin Gostisha" />
+		<meta name="DC.Keywords" content="Martin Gostisha, Swarm, Madison, Astronomy, Astrophysics, High Velocity Clouds, HVC, Simulation, Wisconsin, Madison" />
+	</head>
+
+	<body>
+		<h1>SWARM</h1>
+		<p id="top">Welcome to Swarm, a tool for simulating clouds in a galactic potential. Below, submit a text file in the form shown <a href="sample_orbits.txt" target="_blank">here</a>. The file should have 2 header lines, it should be tab-delimited, and should not have any footer lines. For now, the text file should contain the initial position (x, y, z, in kpc) for each particle, as well as the initial velocities (v<sub>x</sub>, v<sub>y</sub>, v<sub>z</sub>, in km s<sup>-1</sup>). If using the initial parameter input, &sigma;<sub>pos</sub> and &sigma;<sub>vel</sub> are the position and velocity standard deviations, respectively, and N is the total number of particles to simulate. The sample file contains the initial positions and velocities for the 5 innermost planets in the solar system in the correct format for the simulation.</p>
+
+		<p id="bottom">There are currently two file output options. <!--The first is a 'pickled' python data structure. It will come in a .pkl file and contains a 3D numpy array of size (timesteps, parameters, particles). If the simulation results will be loaded into python for analysis, this is the most compact and simple way to get the data. For more information on the Pickle (and cPickle) python libraries, visit the <a href="https://wiki.python.org/moin/UsingPickle">Python Wiki</a> or the <a href="http://docs.python.org/2/library/pickle.html">Official Python Docs</a> page.--> The first way to get the data is to have the program return a zip file containing the results in .txt files, one file per particle (ASCII). The other option is to have the program return a zip file of .txt files, one file per timestep (ASCII).</p>
+
+		<h3>Parameter Input</h3>
+
+		<form enctype="multipart/form-data" action="services/swarm.client.php" method="post">
+
+			<div id="file">
+				<label>Choose your file to upload: </label>
+				<input type="file" name="txtfile" size="40" />
+			</div>
+
+			<div>
+				<strong>or</strong>
+			</div>
+
+			<div>
+				<label>Input Initial Parameters:</label>
+				x<sub>0</sub>: <input type="text" name="xinit" value="0.0" />
+				y<sub>0</sub>: <input type="text" name="yinit" value="-8.0" />
+				z<sub>0</sub>: <input type="text" name="zinit" value="0.0" />
+			</div>
+			<div id="lineup">
+				vx<sub>0</sub>: <input type="text" name="vxinit" value="220.0" />
+				vy<sub>0</sub>: <input type="text" name="vyinit" value="0.0" />
+				vz<sub>0</sub>: <input type="text" name="vzinit" value="0.0" />
+			</div>
+			<div id="lineup2">
+				&sigma;<sub>pos</sub>: <input type="text" name="sigpos" value="0.1" />
+				&sigma;<sub>vel</sub>: <input type="text" name="sigvel" value="5.0" />
+				N: <input type="text" name="nparticles" value="100" />
+			</div>
+
+			<div>
+				<label>Choose your potential: </label>
+				<input type="radio" name="potential" value="pointsrc" /> Point Source
+				<input type="radio" name="potential" value="wolfire" checked /> Wolfire: (
+						<input type="checkbox" name="wolfire1" checked /> Disk
+						<input type="checkbox" name="wolfire2" checked /> Bulge
+						<input type="checkbox" name="wolfire3" checked /> Halo)
+			</div>
+
+			<div>
+				<label>Choose your timescale: </label>
+				<input type="text" name="t_total" value="1.0" /> Total Time (in Gyr)
+				<input type="text" name="timesteps" value="1000" /> Number of Timesteps
+			</div>
+
+			<div>
+				<label>File Output Style: </label>
+<!--			<input type="radio" name="output" value="pkl" /> Pickled -->
+				<input type="radio" name="output" value="orbits" checked /> Particle Files
+				<input type="radio" name="output" value="timesteps" /> Timestep Files
+			</div>
+
+			<div>
+				<label>Email Address:</label>
+				<input type="text" name="email" id="email" />
+			</div>
+
+			<div>
+				<input type="submit" value="Go!"/>
+			</div>
+
+		</form>
+
+		<p id="top"></p>
+		
+		<h3>Using SWARM</h3>
+
+		<p>When Swarm is done with the calculations, an email will be sent to you with a link to download the data. However, a suite of python tools is available so be used with the Swarm output. Those tools can be downloaded <a href="http://www.astro.wisc.edu/~gostisha/resource/download/swarm/swarm.py">here</a>. Simply put this file where you'll be doing your data analysis and in python type import swarm. At this time, the tools are only developed to be used with the particle or timestep files. The data to be downloaded we be in a zip file called swarm_XXXXX.zip where XXXXX are numbers that constitute the <strong>fileID</strong>. This number will be important when using the Swarm tools. With that being said, the tools are:</p>
+
+		<ul>
+			<li><strong>swarm.getData(</strong><i>string</i><strong> fileID):</strong> This function simply gets the data from the web, unzips the file, creates a directory containing all of the text files, and stores each file as a dictionary, with all of the dictionaries in one giant list and returns this list. The created directory is located in the same place you're worked and has the same name as the fileID.</li>
+
+			<li><strong>swarm.plotData(</strong><i>list</i><strong> dictionary_list, </strong><i>string</i><strong> xkey, </strong><i>string</i><strong> ykey):</strong> This function takes the list of dictionaries and the file type (either 'particle' or 'timestep') created by swarm.getData as well as two dictionary keys, the former to be plotted on the x-axis and the latter on the y-axis. <i>This function is currently only built for use with the particle output files. Compatibility with the timestep files is coming soon!</i></li>
+
+			<li><strong>swarm.orbitAnimate(</strong><i>list</i><strong> dictionary_list, </strong><i>string</i><strong> xkey, </strong><i>string</i><strong> ykey):</strong> This function takes the same inputs as <i>swarm.plotData</i>, but this time shows an animation of the orbits of the particles over time. <i>This function is currently only built for use with the particle output files. Compatibility with the timestep files is coming soon!</i></li>
+		</ul>
+
+		<p id="bottom">Any questions, bugs, or other general concerns about Swarm or the tools can be pointed to <a href="mailto:gostisha@astro.wisc.edu?Subject=Swarm%20Problem">Martin Gostisha</a>. </p>
+
+	</body>
+</html>

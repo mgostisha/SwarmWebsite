@@ -1,0 +1,55 @@
+html {
+	background: #C4E9BE;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+p {
+	line-height: 175%;
+	padding: 5px;
+}
+
+ul {
+	width: 600px;
+	padding-left: 100px;
+}
+
+li {
+	line-height: 175%;
+	padding: 2px;
+	text-align: justify;
+}
+
+div{
+	line-height: 200%;
+}
+
+#top {
+	border-top: 2px solid black;
+}
+
+#bottom {
+	border-bottom: 2px solid black;
+}
+
+#file {
+	border-top: 1px solid black;
+	padding-top: 5px;
+}
+
+#lineup {
+	padding-left: 193px;
+}
+
+#lineup2 {
+	padding-left: 193px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+}
+
