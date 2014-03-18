@@ -10,16 +10,15 @@
 base=$1
 txtfile=$2
 email=$3
-output_fmt=$4
-t_total=$5
-timesteps=$6
-potential=$7
-disk=$8
-bulge=$9
-halo=${10}
-jobid=${11}
+t_total=$4
+timesteps=$5
+potential=$6
+disk=$7
+bulge=$8
+halo=$9
+jobid=${10}
 
-python $base/bin/test_script.py $txtfile $output_fmt $timesteps $t_total $potential $disk $bulge $halo > swarm.out
+python $base/bin/filescript.py $txtfile $timesteps $t_total $potential $disk $bulge $halo > swarm.out
 
 # Run the mailer
 

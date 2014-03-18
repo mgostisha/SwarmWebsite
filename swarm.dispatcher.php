@@ -21,13 +21,12 @@ $PREFIX = "DISPATCHER";
 
 $TXTFILE = $argv[1];
 $EMAIL = $argv[2];
-$OUTPUT_FMT = $argv[3];
-$POTENTIAL = $argv[4];
-$WOLFIRE_DISK = $argv[5];
-$WOLFIRE_BULGE = $argv[6];
-$WOLFIRE_HALO = $argv[7];
-$T_TOTAL = $argv[8];
-$TIMESTEPS = $argv[9];
+$POTENTIAL = $argv[3];
+$WOLFIRE_DISK = $argv[4];
+$WOLFIRE_BULGE = $argv[5];
+$WOLFIRE_HALO = $argv[6];
+$T_TOTAL = $argv[7];
+$TIMESTEPS = $argv[8];
 
 $error = '';
 
@@ -95,7 +94,7 @@ if(chdir($tmpdir)) {
   $output=NULL;
   $job_id = rand(1,99999);
 
-  $swarm_out = exec("$EXEC $BASE_DIR $TXTFILE $EMAIL $OUTPUT_FMT $T_TOTAL $TIMESTEPS $POTENTIAL $WOLFIRE_DISK $WOLFIRE_BULGE $WOLFIRE_HALO $job_id", 
+  $swarm_out = exec("$EXEC $BASE_DIR $TXTFILE $EMAIL $T_TOTAL $TIMESTEPS $POTENTIAL $WOLFIRE_DISK $WOLFIRE_BULGE $WOLFIRE_HALO $job_id", 
                     $output, $ret_val);
 
   if(!$ret_val) {

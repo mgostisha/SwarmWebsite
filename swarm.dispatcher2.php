@@ -20,22 +20,21 @@ $PREFIX = "DISPATCHER";
 // Parameters
 
 $EMAIL = $argv[1];
-$OUTPUT_FMT = $argv[2];
-$XINIT = $argv[3];
-$YINIT = $argv[4];
-$ZINIT = $argv[5];
-$VXINIT = $argv[6];
-$VYINIT = $argv[7];
-$VZINIT = $argv[8];
-$SIGPOS = $argv[9];
-$SIGVEL = $argv[10];
-$NPARTICLES = $argv[11];
-$POTENTIAL = $argv[12];
-$WOLFIRE_DISK = $argv[13];
-$WOLFIRE_BULGE = $argv[14];
-$WOLFIRE_HALO = $argv[15];
-$T_TOTAL = $argv[16];
-$TIMESTEPS = $argv[17];
+$XINIT = $argv[2];
+$YINIT = $argv[3];
+$ZINIT = $argv[4];
+$VXINIT = $argv[5];
+$VYINIT = $argv[6];
+$VZINIT = $argv[7];
+$SIGPOS = $argv[8];
+$SIGVEL = $argv[9];
+$NPARTICLES = $argv[10];
+$POTENTIAL = $argv[11];
+$WOLFIRE_DISK = $argv[12];
+$WOLFIRE_BULGE = $argv[13];
+$WOLFIRE_HALO = $argv[14];
+$T_TOTAL = $argv[15];
+$TIMESTEPS = $argv[16];
 
 $error = '';
 
@@ -103,7 +102,7 @@ if(chdir($tmpdir)) {
   $output=NULL;
   $job_id = rand(1,99999);
 
-  $swarm_out = exec("$EXEC $BASE_DIR $EMAIL $OUTPUT_FMT $XINIT $YINIT $ZINIT $VXINIT $VYINIT $VZINIT".
+  $swarm_out = exec("$EXEC $BASE_DIR $EMAIL $XINIT $YINIT $ZINIT $VXINIT $VYINIT $VZINIT".
     " $SIGPOS $SIGVEL $NPARTICLES $T_TOTAL $TIMESTEPS $POTENTIAL $WOLFIRE_DISK $WOLFIRE_BULGE $WOLFIRE_HALO $job_id", 
                     $output, $ret_val);
 

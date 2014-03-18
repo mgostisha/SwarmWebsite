@@ -9,25 +9,24 @@
 
 base=$1
 email=$2
-output_fmt=$3
-xi=$4
-yi=$5
-zi=$6
-vxi=$7
-vyi=$8
-vzi=$9
-sigpos=${10}
-sigvel=${11}
-n=${12}
-t_total=${13}
-timesteps=${14}
-potential=${15}
-disk=${16}
-bulge=${17}
-halo=${18}
-jobid=${19}
+xi=$3
+yi=$4
+zi=$5
+vxi=$6
+vyi=$7
+vzi=$8
+sigpos=$9
+sigvel=${10}
+n=${11}
+t_total=${12}
+timesteps=${13}
+potential=${14}
+disk=${15}
+bulge=${16}
+halo=${17}
+jobid=${18}
 
-python $base/bin/test_script2.py $xi $yi $zi $vxi $vyi $vzi $sigpos $sigvel $n $output_fmt $timesteps $t_total $potential $disk $bulge $halo > swarm.out
+python $base/bin/initscript.py $xi $yi $zi $vxi $vyi $vzi $sigpos $sigvel $n $timesteps $t_total $potential $disk $bulge $halo > swarm.out
 
 # Run the mailer
 
