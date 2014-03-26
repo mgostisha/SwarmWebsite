@@ -44,30 +44,75 @@
 			</div>
 
 			<div>
-				<label>Choose your potential: </label>
+				<p class="drag">Add Drag? <input type="checkbox" name="drag_optn" /></p>
+				<p class="drag"><span>Choose Halo Velocity Field</p>
+			</div>
+
+			<div>
+				<p class="velrho"><input type="radio" name="vfield" value="zerov" checked />
+					Zero Velocity</p>
+				<p class="velrho"><input type="radio" name="vfield" value="potentialmatch" />
+					Match Potential (v = (R g<sub>r</sub>)<sup>1/2</sup>)</p>
+				<p class="velrho"><input type="radio" name="vfield" value="voutflow" />
+					Radial Outflow: (v = v<sub>0</sub>(R/R<sub>sc</sub>)):
+					v<sub>0</sub>: <input type="text" name="vzero" value="0.0" />
+					R<sub>sc</sub>: <input type="text" name="vRsc" value="0.0" /></p> 
+				<p></p>
+			</div>
+
+			<div>
+				<p class="drag"><span>Choose Ambient Density Field</p>
+			</div>
+
+			<div>
+				<p class="velrho"><input type="radio" name="rhofield" value="constantrho" checked /> 
+					Constant Denity:
+					&rho;<sub>0</sub>: <input type="text" name="rhocen" value="0.0" /></p>
+				<p class="velrho"><input type="radio" name="rhofield" value="powerlawrho" /> 
+					Power Law:
+					&rho;<sub>0</sub>: <input type="text" name="rhocen2" value="0.0" />
+					R<sub>sc</sub>: <input type="text" name="Rscpow" value="0.0" />
+					&alpha;: <input type="text" name="alphapow" value="0.0" /></p>
+				<p class="velrho"><input type="radio" name="rhofield" value="disks" /> 
+					Disks:
+					&rho;<sub>0</sub>: <input type="text" name="rhodisk1" value="0.0" />
+					R<sub>sc,1</sub>: <input type="text" name="Rscdisk1" value="0.0" />
+					Z<sub>sc,1</sub>: <input type="text" name="Zscdisk1" value="0.0" /></p>
+				<p id="moredisks">
+					&rho;<sub>0</sub>: <input type="text" name="rhodisk2" value="0.0" />
+					R<sub>sc,2</sub>: <input type="text" name="Rscdisk2" value="0.0" />
+					Z<sub>sc,2</sub>: <input type="text" name="Zscdisk2" value="0.0" /></p>
+				<p id="moredisksbottom">
+					&rho;<sub>0</sub>: <input type="text" name="rhodisk3" value="0.0" />
+					R<sub>sc,3</sub>: <input type="text" name="Rscdisk3" value="0.0" />
+					Z<sub>sc,3</sub>: <input type="text" name="Zscdisk3" value="0.0" /></p>
+			</div>
+
+			<div>
+				<p id="potential">Choose your potential:
 				<input type="radio" name="potential" value="pointsrc" /> Point Source
 				<input type="radio" name="potential" value="wolfire" checked /> Wolfire: (
 						<input type="checkbox" name="wolfire1" checked /> Disk
 						<input type="checkbox" name="wolfire2" checked /> Bulge
-						<input type="checkbox" name="wolfire3" checked /> Halo)
+						<input type="checkbox" name="wolfire3" checked /> Halo)</p>
 			</div>
 
 			<div>
-				<label>Choose your timescale: </label>
+				<p>Choose your timescale:
 				<input type="text" name="t_total" value="1.0" /> Total Time (in Gyr)
-				<input type="text" name="timesteps" value="1000" /> Number of Timesteps
+				<input type="text" name="timesteps" value="1000" /> Number of Timesteps</p>
 			</div>
 
-			<div>
+<!--			<div>
 				<label>File Output Style: </label>
-<!--			<input type="radio" name="output" value="pkl" /> Pickled -->
+				<input type="radio" name="output" value="pkl" /> Pickled 
 				<input type="radio" name="output" value="orbits" checked /> Particle Files
 				<input type="radio" name="output" value="timesteps" /> Timestep Files
-			</div>
+			</div> -->
 
 			<div>
-				<label>Email Address:</label>
-				<input type="text" name="email" id="email" />
+				<p id="email">Email Address:
+				<input type="text" name="email" id="email" /></p>
 			</div>
 
 			<div>
@@ -88,6 +133,8 @@
 			<li><strong>swarm.plotData(</strong><i>list</i><strong> dictionary_list, </strong><i>string</i><strong> xkey, </strong><i>string</i><strong> ykey):</strong> This function takes the list of dictionaries and the file type (either 'particle' or 'timestep') created by swarm.getData as well as two dictionary keys, the former to be plotted on the x-axis and the latter on the y-axis. <i>This function is currently only built for use with the particle output files. Compatibility with the timestep files is coming soon!</i></li>
 
 			<li><strong>swarm.orbitAnimate(</strong><i>list</i><strong> dictionary_list, </strong><i>string</i><strong> xkey, </strong><i>string</i><strong> ykey):</strong> This function takes the same inputs as <i>swarm.plotData</i>, but this time shows an animation of the orbits of the particles over time. <i>This function is currently only built for use with the particle output files. Compatibility with the timestep files is coming soon!</i></li>
+
+			<li><strong>swarm.timestep_files(</strong><i>string</i><strong> filedirectory):</strong> This function will take the particle files spit out by swarm and convert them so that each timestep is its own file. It will prompt the user to see whether they want to keep or remove the old particle files.</li>
 		</ul>
 
 		<p id="bottom">Any questions, bugs, or other general concerns about Swarm or the tools can be pointed to <a href="mailto:gostisha@astro.wisc.edu?Subject=Swarm%20Problem">Martin Gostisha</a>. </p>

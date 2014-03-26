@@ -24,12 +24,30 @@ potential=${14}
 disk=${15}
 bulge=${16}
 halo=${17}
-jobid=${18}
+drag_optn=${18}
+vfield=${19}
+vzero=${20}
+vRsc=${21}
+rhofield=${22}
+rhocen=${23}
+rhocen2=${24}
+Rscpow=${25}
+alphapow=${26}
+rhodisk1=${27}
+Rscdisk1=${28}
+Zscdisk1=${29}
+rhodisk2=${30}
+Rscdisk2=${31}
+Zscdisk2=${32}
+rhodisk3=${33}
+Rscdisk3=${34}
+Zscdisk3=${35}
+jobid=${36}
 
 python $base/bin/initscript.py $xi $yi $zi $vxi $vyi $vzi $sigpos $sigvel $n $timesteps $t_total $potential $disk $bulge $halo > swarm.out
 
 # Run the mailer
 
 if [[ -n $email ]]; then
-    $base/bin/swarm.mailer.php $email $jobid 
+    $base/bin/swarm.mailer.php $email $jobid
 fi

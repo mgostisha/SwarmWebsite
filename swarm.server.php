@@ -108,25 +108,44 @@ if (!$listen_stream) {
 		$data['wolfire3'] = "'no'";
 	}
 
+	if(array_key_exists('drag_optn', $data) && $data['drag_optn'] == "'on'") {
+		$data['drag_optn'] = "'yes'";
+	}
+	else {
+		$data['drag_optn'] = "'no'";
+	}
+
 	if(array_key_exists('filename', $data)){
 
 		write_log($PREFIX, "Request $data[filename] $data[email] $data[potential] $data[wolfire1]".
-			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps]");
+			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps] $data[drag_optn] $data[vfield]".
+			" $data[vzero] $data[vRsc] $data[rhofield] $data[rhocen] $data[rhocen2] $data[Rscpow] $data[alphapow]".
+			" $data[rhodisk1] $data[Rscdisk1] $data[Zscdisk1] $data[rhodisk2] $data[Rscdisk2] $data[Zscdisk2]".
+			" $data[rhodisk3] $data[Rscdisk3] $data[Zscdisk3]");
 
 		// Dispatch the request
 
 		$response = exec("$BIN_DIR/swarm.dispatcher.php $data[filename] $data[email] $data[potential] $data[wolfire1]".
-			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps]");
+			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps] $data[drag_optn] $data[vfield]".
+			" $data[vzero] $data[vRsc] $data[rhofield] $data[rhocen] $data[rhocen2] $data[Rscpow] $data[alphapow]".
+			" $data[rhodisk1] $data[Rscdisk1] $data[Zscdisk1] $data[rhodisk2] $data[Rscdisk2] $data[Zscdisk2]".
+			" $data[rhodisk3] $data[Rscdisk3] $data[Zscdisk3]");
 
 	} else {
 
 		write_log($PREFIX, "Request $data[email] $data[xinit] $data[yinit] $data[zinit] $data[vxinit] $data[vyinit]".
 			" $data[vzinit] $data[sigpos] $data[sigvel] $data[nparticles] $data[potential] $data[wolfire1]".
-			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps]");
+			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps] $data[drag_optn] $data[vfield]".
+			" $data[vzero] $data[vRsc] $data[rhofield] $data[rhocen] $data[rhocen2] $data[Rscpow] $data[alphapow]".
+			" $data[rhodisk1] $data[Rscdisk1] $data[Zscdisk1] $data[rhodisk2] $data[Rscdisk2] $data[Zscdisk2]".
+			" $data[rhodisk3] $data[Rscdisk3] $data[Zscdisk3]");
 
 		$response = exec("$BIN_DIR/swarm.dispatcher2.php $data[email] $data[xinit] $data[yinit] $data[zinit] $data[vxinit] $data[vyinit]".
 			" $data[vzinit] $data[sigpos] $data[sigvel] $data[nparticles] $data[potential] $data[wolfire1]".
-			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps]");
+			" $data[wolfire2] $data[wolfire3] $data[t_total] $data[timesteps] $data[drag_optn] $data[vfield]".
+			" $data[vzero] $data[vRsc] $data[rhofield] $data[rhocen] $data[rhocen2] $data[Rscpow] $data[alphapow]".
+			" $data[rhodisk1] $data[Rscdisk1] $data[Zscdisk1] $data[rhodisk2] $data[Rscdisk2] $data[Zscdisk2]".
+			" $data[rhodisk3] $data[Rscdisk3] $data[Zscdisk3]");
 	}
 
 
