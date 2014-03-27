@@ -51,12 +51,15 @@
 			<div>
 				<p class="velrho"><input type="radio" name="vfield" value="zerov" checked />
 					Zero Velocity</p>
+
 				<p class="velrho"><input type="radio" name="vfield" value="potentialmatch" />
 					Match Potential (v = (R g<sub>r</sub>)<sup>1/2</sup>)</p>
+
 				<p class="velrho"><input type="radio" name="vfield" value="voutflow" />
 					Radial Outflow: (v = v<sub>0</sub>(R/R<sub>sc</sub>)):
 					v<sub>0</sub>: <input type="text" name="vzero" value="0.0" />
 					R<sub>sc</sub>: <input type="text" name="vRsc" value="0.0" /></p> 
+
 				<p></p>
 			</div>
 
@@ -65,25 +68,29 @@
 			</div>
 
 			<div>
-				<p class="velrho"><input type="radio" name="rhofield" value="constantrho" checked /> 
+				<p class="velrho"><input type="radio" name="denfield" value="constantrho" checked /> 
 					Constant Denity:
-					&rho;<sub>0</sub>: <input type="text" name="rhocen" value="0.0" /></p>
-				<p class="velrho"><input type="radio" name="rhofield" value="powerlawrho" /> 
+					n<sub>H,0</sub>: <input type="text" name="nHcen" value="0.0" /></p>
+
+				<p class="velrho"><input type="radio" name="denfield" value="powerlawrho" /> 
 					Power Law:
-					&rho;<sub>0</sub>: <input type="text" name="rhocen2" value="0.0" />
+					n<sub>H,0</sub>: <input type="text" name="nHcen2" value="0.0" />
 					R<sub>sc</sub>: <input type="text" name="Rscpow" value="0.0" />
 					&alpha;: <input type="text" name="alphapow" value="0.0" /></p>
-				<p class="velrho"><input type="radio" name="rhofield" value="disks" /> 
+
+				<p class="velrho"><input type="radio" name="denfield" value="disks" /> 
 					Disks:
-					&rho;<sub>0</sub>: <input type="text" name="rhodisk1" value="0.0" />
+					n<sub>H,0</sub>: <input type="text" name="nHdisk1" value="0.0" />
 					R<sub>sc,1</sub>: <input type="text" name="Rscdisk1" value="0.0" />
 					Z<sub>sc,1</sub>: <input type="text" name="Zscdisk1" value="0.0" /></p>
+
 				<p id="moredisks">
-					&rho;<sub>0</sub>: <input type="text" name="rhodisk2" value="0.0" />
+					n<sub>H,0</sub>: <input type="text" name="nHdisk2" value="0.0" />
 					R<sub>sc,2</sub>: <input type="text" name="Rscdisk2" value="0.0" />
 					Z<sub>sc,2</sub>: <input type="text" name="Zscdisk2" value="0.0" /></p>
+
 				<p id="moredisksbottom">
-					&rho;<sub>0</sub>: <input type="text" name="rhodisk3" value="0.0" />
+					n<sub>H,0</sub>: <input type="text" name="nHdisk3" value="0.0" />
 					R<sub>sc,3</sub>: <input type="text" name="Rscdisk3" value="0.0" />
 					Z<sub>sc,3</sub>: <input type="text" name="Zscdisk3" value="0.0" /></p>
 			</div>

@@ -31,18 +31,18 @@ $DRAG_OPTN = $argv[9];
 $VFIELD = $argv[10];
 $VZERO = $argv[11];
 $VRSC = $argv[12];
-$RHOFIELD = $argv[13];
-$RHOCEN = $argv[14];
-$RHOCEN2 = $argv[15];
+$DENFIELD = $argv[13];
+$NHCEN = $argv[14];
+$NHCEN2 = $argv[15];
 $RSCPOW = $argv[16];
 $ALPHAPOW = $argv[17];
-$RHODISK1 = $argv[18];
+$NHDISK1 = $argv[18];
 $RSCDISK1 = $argv[19];
 $ZSCDISK1 = $argv[20];
-$RHODISK2 = $argv[21];
+$NHDISK2 = $argv[21];
 $RSCDISK2 = $argv[22];
 $ZSCDISK2 = $argv[23];
-$RHODISK3 = $argv[24];
+$NHDISK3 = $argv[24];
 $RSCDISK3 = $argv[25];
 $ZSCDISK3 = $argv[26];
 
@@ -113,8 +113,8 @@ if(chdir($tmpdir)) {
   $job_id = rand(1,99999);
 
   $swarm_out = exec("$EXEC $BASE_DIR $TXTFILE $EMAIL $T_TOTAL $TIMESTEPS $POTENTIAL $WOLFIRE_DISK $WOLFIRE_BULGE".
-                    " $WOLFIRE_HALO $DRAG_OPTN $VFIELD $VZERO $VRSC $RHOFIELD $RHOCEN $RHOCEN2 $RSCPOW $ALPHAPOW". 
-                    " $RHODISK1 $RSCDISK1 $ZSCDISK1 $RHODISK2 $RSCDISK2 $ZSCDISK2 $RHODISK3 $RSCDISK3 $ZSCDISK3 $job_id", 
+                    " $WOLFIRE_HALO $DRAG_OPTN $VFIELD $VZERO $VRSC $DENFIELD $NHCEN $NHCEN2 $RSCPOW $ALPHAPOW". 
+                    " $NHDISK1 $RSCDISK1 $ZSCDISK1 $NHDISK2 $RSCDISK2 $ZSCDISK2 $NHDISK3 $RSCDISK3 $ZSCDISK3 $job_id", 
                     $output, $ret_val);
 
   if(!$ret_val) {
