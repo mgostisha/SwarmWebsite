@@ -28,19 +28,23 @@
 
 			<div>
 				<label>Input Initial Parameters:</label>
-				x<sub>0</sub>: <input type="text" name="xinit" value="0.0" />
-				y<sub>0</sub>: <input type="text" name="yinit" value="-8.0" />
-				z<sub>0</sub>: <input type="text" name="zinit" value="0.0" />
+				x<sub>0</sub>: <input type="text" name="xinit" size="10" value="0.0" />
+				y<sub>0</sub>: <input type="text" name="yinit" size="10" value="-8.0" />
+				z<sub>0</sub>: <input type="text" name="zinit" size="10" value="0.0" />
 			</div>
 			<div id="lineup">
-				vx<sub>0</sub>: <input type="text" name="vxinit" value="220.0" />
-				vy<sub>0</sub>: <input type="text" name="vyinit" value="0.0" />
-				vz<sub>0</sub>: <input type="text" name="vzinit" value="0.0" />
+				vx<sub>0</sub>: <input type="text" name="vxinit" size="10" value="220.0" />
+				vy<sub>0</sub>: <input type="text" name="vyinit" size="10" value="0.0" />
+				vz<sub>0</sub>: <input type="text" name="vzinit" size="10" value="0.0" />
 			</div>
 			<div id="lineup2">
-				&sigma;<sub>pos</sub>: <input type="text" name="sigpos" value="0.1" />
-				&sigma;<sub>vel</sub>: <input type="text" name="sigvel" value="5.0" />
-				N: <input type="text" name="nparticles" value="100" />
+				&sigma;<sub>pos</sub>: <input type="text" name="sigpos" size="10" value="0.1" />
+				&sigma;<sub>vel</sub>: <input type="text" name="sigvel" size="10" value="5.0" />
+				N: <input type="text" name="nparticles" size="10" value="100" />
+			</div>
+			<div id="lineup3">
+				log N<sub>c</sub>: <input type="text" name="colden" size="10" value="20" />
+				&sigma;<sub>Nc</sub>: <input type="text" name="sigden" size="10" value="1.0" />
 			</div>
 
 			<div>
@@ -57,8 +61,8 @@
 
 				<p class="velrho"><input type="radio" name="vfield" value="voutflow" />
 					Radial Outflow: (v = v<sub>0</sub>(R/R<sub>sc</sub>)):
-					v<sub>0</sub>: <input type="text" name="vzero" value="0.0" />
-					R<sub>sc</sub>: <input type="text" name="vRsc" value="0.0" /></p> 
+					v<sub>0</sub>: <input type="text" name="vzero" size="10" value="0.0" />
+					R<sub>sc</sub>: <input type="text" name="vRsc" size="10" value="0.0" /></p> 
 
 				<p></p>
 			</div>
@@ -70,29 +74,29 @@
 			<div>
 				<p class="velrho"><input type="radio" name="denfield" value="constantrho" checked /> 
 					Constant Denity:
-					n<sub>H,0</sub>: <input type="text" name="nHcen" value="0.0" /></p>
+					log n<sub>H,0</sub>: <input type="text" name="nHcen" size="10" value="0.0" /></p>
 
 				<p class="velrho"><input type="radio" name="denfield" value="powerlawrho" /> 
 					Power Law:
-					n<sub>H,0</sub>: <input type="text" name="nHcen2" value="0.0" />
-					R<sub>sc</sub>: <input type="text" name="Rscpow" value="0.0" />
-					&alpha;: <input type="text" name="alphapow" value="0.0" /></p>
+					log n<sub>H,0</sub>: <input type="text" name="nHcen2" size="10" value="0.0" />
+					R<sub>sc</sub>: <input type="text" name="Rscpow" size="10" value="0.0" />
+					&alpha;: <input type="text" name="alphapow" size="10" value="0.0" /></p>
 
 				<p class="velrho"><input type="radio" name="denfield" value="disks" /> 
 					Disks:
-					n<sub>H,0</sub>: <input type="text" name="nHdisk1" value="0.0" />
-					R<sub>sc,1</sub>: <input type="text" name="Rscdisk1" value="0.0" />
-					Z<sub>sc,1</sub>: <input type="text" name="Zscdisk1" value="0.0" /></p>
+					log n<sub>H,0</sub>: <input type="text" name="nHdisk1" size="10" value="0.0" />
+					R<sub>sc,1</sub>: <input type="text" name="Rscdisk1" size="10" value="0.0" />
+					Z<sub>sc,1</sub>: <input type="text" name="Zscdisk1" size="10" value="0.0" /></p>
 
 				<p id="moredisks">
-					n<sub>H,0</sub>: <input type="text" name="nHdisk2" value="0.0" />
-					R<sub>sc,2</sub>: <input type="text" name="Rscdisk2" value="0.0" />
-					Z<sub>sc,2</sub>: <input type="text" name="Zscdisk2" value="0.0" /></p>
+					log n<sub>H,0</sub>: <input type="text" name="nHdisk2" size="10" value="0.0" />
+					R<sub>sc,2</sub>: <input type="text" name="Rscdisk2" size="10" value="0.0" />
+					Z<sub>sc,2</sub>: <input type="text" name="Zscdisk2" size="10" value="0.0" /></p>
 
 				<p id="moredisksbottom">
-					n<sub>H,0</sub>: <input type="text" name="nHdisk3" value="0.0" />
-					R<sub>sc,3</sub>: <input type="text" name="Rscdisk3" value="0.0" />
-					Z<sub>sc,3</sub>: <input type="text" name="Zscdisk3" value="0.0" /></p>
+					log n<sub>H,0</sub>: <input type="text" name="nHdisk3" size="10" value="0.0" />
+					R<sub>sc,3</sub>: <input type="text" name="Rscdisk3" size="10" value="0.0" />
+					Z<sub>sc,3</sub>: <input type="text" name="Zscdisk3" size="10" value="0.0" /></p>
 			</div>
 
 			<div>
@@ -106,8 +110,8 @@
 
 			<div>
 				<p>Choose your timescale:
-				<input type="text" name="t_total" value="1.0" /> Total Time (in Gyr)
-				<input type="text" name="timesteps" value="1000" /> Number of Timesteps</p>
+				<input type="text" name="t_total" size="10" value="1.0" /> Total Time (in Gyr)
+				<input type="text" name="timesteps" size="10" value="1000" /> Number of Timesteps</p>
 			</div>
 
 <!--			<div>
