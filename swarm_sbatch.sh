@@ -36,7 +36,9 @@ Rscdisk3=${26}
 Zscdisk3=${27}
 jobid=${28}
 
-python $base/bin/filescript.py $txtfile $timesteps $t_total $potential $disk $bulge $halo > swarm.out
+python $base/bin/filescript.py $txtfile $timesteps $t_total $potential $disk $bulge $halo \
+$drag_optn $vfield $vzero $vRsc $denfield $nhcen $nhcen2 $Rscpow $alphapow $nhdisk1 $Rscdisk1 \
+$Zscdisk1 $nhdisk2 $Rscdisk2 $Zscdisk2 $nhdisk3 $Rscdisk3 $Zscdisk3 > swarm.out
 
 # Run the mailer
 
