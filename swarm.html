@@ -39,12 +39,12 @@
 			</div>
 			<div id="lineup2">
 				&sigma;<sub>pos</sub>: <input type="text" name="sigpos" size="10" value="0.1" />
-				&sigma;<sub>vel</sub>: <input type="text" name="sigvel" size="10" value="5.0" />
-				N: <input type="text" name="nparticles" size="10" value="100" />
+				&sigma;<sub>vel</sub>: <input type="text" name="sigvel" size="10" value="1.0" />
+				N: <input type="text" name="nparticles" size="10" value="10" />
 			</div>
 			<div id="lineup3">
-				log N<sub>c</sub>: <input type="text" name="colden" size="10" value="20" />
-				&sigma;<sub>Nc</sub>: <input type="text" name="sigden" size="10" value="1.0" />
+				log N<sub>c</sub>: <input type="text" name="colden" size="10" value="20.0" />
+				&sigma;<sub>Nc</sub>: <input type="text" name="sigden" size="10" value="0.1" />
 			</div>
 
 			<div>
@@ -74,13 +74,13 @@
 			<div>
 				<p class="velrho"><input type="radio" name="denfield" value="constantrho" checked /> 
 					Constant Denity:
-					log n<sub>H,0</sub>: <input type="text" name="nHcen" size="10" value="0.0" /></p>
+					log n<sub>H,0</sub>: <input type="text" name="nHcen" size="10" value="-3.0" /></p>
 
 				<p class="velrho"><input type="radio" name="denfield" value="powerlawrho" /> 
 					Power Law:
-					log n<sub>H,0</sub>: <input type="text" name="nHcen2" size="10" value="0.0" />
+					log n<sub>H,0</sub>: <input type="text" name="nHcen2" size="10" value="-3.0" />
 					R<sub>sc</sub>: <input type="text" name="Rscpow" size="10" value="0.0" />
-					&alpha;: <input type="text" name="alphapow" size="10" value="0.0" /></p>
+					&alpha;: <input type="text" name="alphapow" size="10" value="1.5" /></p>
 
 				<p class="velrho"><input type="radio" name="denfield" value="disks" /> 
 					Disks:
