@@ -43,10 +43,10 @@
  			$errors[] = "There was a problem moving the file.";
  		}
 
- 		if (!$errors) {
- 			echo "The file was uploaded, validated, and moved correctly! Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>
- 			here</a> to return to the Swarm homepage.";
- 		}
+ 		//if (!$errors) {
+ 		//	echo "The file was uploaded, validated, and moved correctly! Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>
+ 		//	here</a> to return to the Swarm homepage.";
+ 		//}
 
  		//----- Write file name and other parameters to the stream -----
 
@@ -58,12 +58,12 @@
  		fputs($stream, "$key $value\n");
  	}
 
- 	if(empty($_FILES['txtfile']['name'])){
-	 	echo "The parameters have been sent. Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>
-	 	here</a> to return to the Swarm homepage";
-	 }
+ 	//if(empty($_FILES['txtfile']['name'])){
+	// 	echo "The parameters have been sent. Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>
+	// 	here</a> to return to the Swarm homepage";
+	// }
 
-
+ 	header('Location: swarm.success.php');
 
   }
 
