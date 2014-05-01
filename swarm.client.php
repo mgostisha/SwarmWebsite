@@ -63,7 +63,12 @@
 	// 	here</a> to return to the Swarm homepage";
 	// }
 
- 	header('Location: swarm.success.php');
+	if (!$errors) {
+	 	header('Location: swarm.success.php');
+	}
+	else {
+		header('Location: swarm.failed.php?errMsg='.urlencode($errors));
+	}
 
   }
 
