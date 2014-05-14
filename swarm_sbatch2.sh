@@ -42,9 +42,14 @@ Zscdisk2=${32}
 nhdisk3=${33}
 Rscdisk3=${34}
 Zscdisk3=${35}
-jobid=${36}
+colden=${36}
+sigden=${37}
+tol=${38}
+jobid=${39}
 
-python $base/bin/initscript.py $xi $yi $zi $vxi $vyi $vzi $sigpos $sigvel $n $timesteps $t_total $potential $disk $bulge $halo > swarm.out
+python $base/bin/initscript.py $xi $yi $zi $vxi $vyi $vzi $sigpos $sigvel $n $timesteps $t_total $potential \
+	$disk $bulge $halo $drag_optn $vfield $vzero $vRsc $denfield $nhcen $nhcen2 $Rscpow $alphapow $nhdisk1 \
+	$Rscdisk1 $Zscdisk1 $nhdisk2 $Rscdisk2 $Zscdisk2 $nhdisk3 $Rscdisk3 $Zscdisk3 $colden $sigden $tol > swarm.out
 
 # Run the mailer
 

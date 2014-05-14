@@ -53,6 +53,9 @@ $ZSCDISK2 = $argv[31];
 $NHDISK3 = $argv[32];
 $RSCDISK3 = $argv[33];
 $ZSCDISK3 = $argv[34];
+$COLDEN = $argv[35];
+$SIGDEN = $argv[36];
+$TOL = $argv[37];
 
 $error = '';
 
@@ -123,8 +126,8 @@ if(chdir($tmpdir)) {
   $swarm_out = exec("$EXEC $BASE_DIR $EMAIL $XINIT $YINIT $ZINIT $VXINIT $VYINIT $VZINIT $SIGPOS $SIGVEL".
                     " $NPARTICLES $T_TOTAL $TIMESTEPS $POTENTIAL $WOLFIRE_DISK $WOLFIRE_BULGE $WOLFIRE_HALO".
                     " $DRAG_OPTN $VFIELD $VZERO $VRSC $DENFIELD $NHCEN $NHCEN2 $RSCPOW $ALPHAPOW". 
-                    " $NHDISK1 $RSCDISK1 $ZSCDISK1 $NHDISK2 $RSCDISK2 $ZSCDISK2 $NHDISK3 $RSCDISK3 $ZSCDISK3 $job_id",
-                     $output, $ret_val); 
+                    " $NHDISK1 $RSCDISK1 $ZSCDISK1 $NHDISK2 $RSCDISK2 $ZSCDISK2 $NHDISK3 $RSCDISK3 $ZSCDISK3".
+                    " $COLDEN $SIGDEN $TOL $job_id", $output, $ret_val); 
 
 
   if(!$ret_val) {
