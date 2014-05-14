@@ -73,7 +73,7 @@
 
 			<div>
 				<p class="velrho"><input type="radio" name="denfield" value="constantrho" checked /> 
-					Constant Denity:
+					Constant Density:
 					log n<sub>H,0</sub>: <input type="text" name="nHcen" size="10" value="-3.0" /></p>
 
 				<p class="velrho"><input type="radio" name="denfield" value="powerlawrho" /> 
@@ -102,24 +102,24 @@
 			<div>
 				<p id="potential">Choose your potential:
 				<input type="radio" name="potential" value="pointsrc" /> Point Source
-				<input type="radio" name="potential" value="wolfire" checked /> Wolfire: (
+				<input type="radio" name="potential" value="wolfire" checked /> 
+				<a href="http://adsabs.harvard.edu/abs/1995ApJ...453..673W">Wolfire</a>: (
 						<input type="checkbox" name="wolfire1" checked /> Disk
 						<input type="checkbox" name="wolfire2" checked /> Bulge
 						<input type="checkbox" name="wolfire3" checked /> Halo)</p>
 			</div>
 
 			<div>
-				<p>Choose your timescale:
+				<p id="tolerance">Choose your timescale:
 				<input type="text" name="t_total" size="10" value="1.0" /> Total Time (in Gyr)
 				<input type="text" name="timesteps" size="10" value="1000" /> Number of Timesteps</p>
 			</div>
 
-<!--			<div>
-				<label>File Output Style: </label>
-				<input type="radio" name="output" value="pkl" /> Pickled 
-				<input type="radio" name="output" value="orbits" checked /> Particle Files
-				<input type="radio" name="output" value="timesteps" /> Timestep Files
-			</div> -->
+			<div>
+				<p>Integrator Convergence Tolerance:
+					<input type="text" name="tol" size="10" value="-3.0" />
+				</p>
+			</div>
 
 			<div>
 				<p id="email">Email Address:
