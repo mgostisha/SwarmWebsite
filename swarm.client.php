@@ -1,8 +1,5 @@
 <?php
 
-// error_reporting(E_ALL);
-
-
 //----- Define Server Parameters ------
 
  $SERVER = 'ahnapee.astro.wisc.edu';
