@@ -8,5 +8,5 @@
 	echo "<br>";
 	echo "<p id='top'> Your parameters were not passed successfully. Error Message: </p>".$errMsg;
 	echo "<p id=bottom> Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>here</a> to return to the Swarm website.</p>";
-
+	
 ?>
