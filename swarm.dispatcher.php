@@ -11,7 +11,7 @@ require_once 'swarm.utils.php';
 
 // Constants
 
-$SLURM_SBATCH = "/usr/data/ahnapee/src/slurm-2.6.6-2/src/sbatch -n1";
+$SLURM_SBATCH = "/usr/data/shock/src/slurm-2.6.6-2/src/sbatch -n1";
 
 $EXEC = "$BIN_DIR/swarm_sbatch.sh";
 

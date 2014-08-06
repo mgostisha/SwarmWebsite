@@ -5,6 +5,9 @@
 //
 // $Log$
 
+// Set Include Path for Mail.php
+set_include_path(".:/usr/lib/php");
+
 // Requires
 
 require_once "Mail.php";

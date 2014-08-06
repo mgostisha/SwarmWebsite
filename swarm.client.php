@@ -2,7 +2,7 @@
 
 //----- Define Server Parameters ------
 
- $SERVER = 'ahnapee.astro.wisc.edu';
+ $SERVER = 'shock.astro.wisc.edu';
  $PORT = 11000;
  $TIMEOUT = 3;
 
