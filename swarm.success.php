@@ -1,5 +1,7 @@
 <?php
 
+	//----- Script to let the user know that submission was accepted
+
 	echo "<link type='text/css' rel='stylesheet' href='../swarm_stylesheet.css' />";
 
 	echo "<br>";

@@ -40,11 +40,6 @@
  			$errors[] = "There was a problem moving the file.";
  		}
 
- 		//if (!$errors) {
- 		//	echo "The file was uploaded, validated, and moved correctly! Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>
- 		//	here</a> to return to the Swarm homepage.";
- 		//}
-
  		//----- Write file name and other parameters to the stream -----
 
 	 	fputs($stream, "filename ".$uploads_dir.$name."\n");
@@ -55,10 +50,8 @@
  		fputs($stream, "$key $value\n");
  	}
 
- 	//if(empty($_FILES['txtfile']['name'])){
-	// 	echo "The parameters have been sent. Click <a href='http://www.astro.wisc.edu/~gostisha/swarm.html'>
-	// 	here</a> to return to the Swarm homepage";
-	// }
+ 	//----- Error check and send the user to the corresponding page
+ 	//----- depending on whether or not there were errors
 
 	if (!$errors) {
 	 	header('Location: swarm.success.php');

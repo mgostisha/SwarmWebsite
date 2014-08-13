@@ -1,10 +1,6 @@
 #!/usr/bin/php
 <?php
 
-// $Source$
-//
-// $Log$
-
 // Set Include Path for Mail.php
 set_include_path(".:/usr/lib/php");
 
@@ -61,8 +57,7 @@ foreach(glob("*.pkl") as $add_filename) {
 $zip->close();
 
 
-// Copy the zipfile to the server. Note that PECL/SSH2 appears to be broken,
-// so we just run the system scp command
+// Copy the zipfile to the server
 
 $result = system("mv $filename $FILE_DIR", $retval);
 

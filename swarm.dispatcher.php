@@ -1,10 +1,6 @@
 #!/usr/bin/php
 <?php
 
-// $Source$
-//
-// $Log$
-
 // Requires
 
 require_once 'swarm.utils.php';
@@ -50,41 +46,6 @@ $TOL = $argv[27];
 $error = '';
 
 // Validate the parameters
-/*
-$error = '';
-
-if(!preg_match('/^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/', $MASS)) {
-
-  $error = 'the initial mass is invalid';
-
-}
-else if(!($MASS >= 0.1 && $MASS <= 100)) {
-
-  $error = 'the initial mass must be in the range 0.1 to 100';
-
-}
-else if(!($METAL == '0001' ||
-	  $METAL == '0003' ||
-	  $METAL == '001' ||
-	  $METAL == '004' ||
-	  $METAL == '01' ||
-	  $METAL == '02' ||
-	  $METAL == '03')) {
-	    
-  $error = 'the metallicity is invalid';
-
-}
-else if(!preg_match('/^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/', $AGE)) {
-
-  $error = 'the maximum age is not valid';
-
-}
-else if(!preg_match('/^[0-9]+$/', $NUMBER)) {
-
-  $error = 'the maximum number of steps is not valid';
-
-}
-*/
 
 if(!preg_match('/^[^@\s]+@([-a-z0-9]+\.)+[a-z]{2,}$/i', $EMAIL)) {
 
@@ -119,12 +80,6 @@ if(chdir($tmpdir)) {
                     $output, $ret_val);
 
   if(!$ret_val) {
-
-    // Parse the job ID
-
-    //preg_match('/([0-9]+)/', $slurm_out, $matches);
-
-    //$job_id = $matches[1];
 
     write_log($PREFIX, "Submitted with id $job_id in directory $tmpdir");
 

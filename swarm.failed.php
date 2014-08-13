@@ -1,5 +1,7 @@
 <?php
 
+	//----- Script to tell the user if their submission failed
+
 	echo "<link type='text/css' rel='stylesheet' href='../swarm_stylesheet.css' />";
 	$errMsg = $_GET['errMsg'];
 

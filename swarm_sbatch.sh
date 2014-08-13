@@ -1,9 +1,4 @@
 #!/bin/bash
-#
-
-# Load in madsdk paths
-
-#. /opt/madsdk/bin/madsdk_init.sh
 
 # Collect arguments
 
@@ -36,6 +31,8 @@ Rscdisk3=${26}
 Zscdisk3=${27}
 tol=${28}
 jobid=${29}
+
+# Send parameters to python script
 
 python $base/bin/filescript.py $txtfile $timesteps $t_total $potential $disk $bulge $halo \
 $drag_optn $vfield $vzero $vRsc $denfield $nhcen $nhcen2 $Rscpow $alphapow $nhdisk1 $Rscdisk1 \
