@@ -30,13 +30,14 @@ nhdisk3=${25}
 Rscdisk3=${26}
 Zscdisk3=${27}
 tol=${28}
-jobid=${29}
+ps_mass=${29}
+jobid=${30}
 
 # Send parameters to python script
 
 python $base/bin/filescript.py $txtfile $timesteps $t_total $potential $disk $bulge $halo \
 $drag_optn $vfield $vzero $vRsc $denfield $nhcen $nhcen2 $Rscpow $alphapow $nhdisk1 $Rscdisk1 \
-$Zscdisk1 $nhdisk2 $Rscdisk2 $Zscdisk2 $nhdisk3 $Rscdisk3 $Zscdisk3 $tol > swarm.out
+$Zscdisk1 $nhdisk2 $Rscdisk2 $Zscdisk2 $nhdisk3 $Rscdisk3 $Zscdisk3 $tol $ps_mass > swarm.out
 
 # Run the mailer
 

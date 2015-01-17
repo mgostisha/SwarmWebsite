@@ -40,12 +40,13 @@ Zscdisk3=${35}
 colden=${36}
 sigden=${37}
 tol=${38}
-jobid=${39}
+ps_mass=${39}
+jobid=${40}
 
 # Sned parameters to python script
 python $base/bin/initscript.py $xi $yi $zi $vxi $vyi $vzi $sigpos $sigvel $n $timesteps $t_total $potential \
 	$disk $bulge $halo $drag_optn $vfield $vzero $vRsc $denfield $nhcen $nhcen2 $Rscpow $alphapow $nhdisk1 \
-	$Rscdisk1 $Zscdisk1 $nhdisk2 $Rscdisk2 $Zscdisk2 $nhdisk3 $Rscdisk3 $Zscdisk3 $colden $sigden $tol > swarm.out
+	$Rscdisk1 $Zscdisk1 $nhdisk2 $Rscdisk2 $Zscdisk2 $nhdisk3 $Rscdisk3 $Zscdisk3 $colden $sigden $tol $ps_mass > swarm.out
 
 # Run the mailer
 

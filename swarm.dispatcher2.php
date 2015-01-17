@@ -52,6 +52,7 @@ $ZSCDISK3 = $argv[34];
 $COLDEN = $argv[35];
 $SIGDEN = $argv[36];
 $TOL = $argv[37];
+$PS_MASS = $argv[38];
 
 $error = '';
 
@@ -88,7 +89,7 @@ if(chdir($tmpdir)) {
                     " $NPARTICLES $T_TOTAL $TIMESTEPS $POTENTIAL $WOLFIRE_DISK $WOLFIRE_BULGE $WOLFIRE_HALO".
                     " $DRAG_OPTN $VFIELD $VZERO $VRSC $DENFIELD $NHCEN $NHCEN2 $RSCPOW $ALPHAPOW". 
                     " $NHDISK1 $RSCDISK1 $ZSCDISK1 $NHDISK2 $RSCDISK2 $ZSCDISK2 $NHDISK3 $RSCDISK3 $ZSCDISK3".
-                    " $COLDEN $SIGDEN $TOL $job_id", $output, $ret_val); 
+                    " $COLDEN $SIGDEN $TOL $PS_MASS $job_id", $output, $ret_val);
 
 
   if(!$ret_val) {
